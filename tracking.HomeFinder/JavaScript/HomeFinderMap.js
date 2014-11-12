@@ -4,6 +4,7 @@ var directionsService;
 var stepDisplay;
 var markerArray = [];
 var address;
+var directionsDisplayPanel;
 
 function loadPage() {
     checkCookie();
@@ -23,7 +24,6 @@ function loadPage() {
 }
 
 function initialize() {
-
 
     checkCookie();
 
@@ -95,7 +95,7 @@ function initialize() {
     map.setOptions({ styles: styles });
 
     // Instantiate an info window to hold step text.
-    stepDisplay = new google.maps.InfoWindow();
+    //stepDisplay = new google.maps.InfoWindow();
 
     // Create a renderer for directions and bind it to the map.
     var rendererOptions = {
@@ -107,7 +107,6 @@ function initialize() {
     // Instantiate an info window to hold step text.
     stepDisplay = new google.maps.InfoWindow();
 
-    
 }
 
 
@@ -138,7 +137,9 @@ function calcRoute(pos, address) {
             var warnings = document.getElementById('warnings_panel');
             warnings.innerHTML = '<b>' + response.routes[0].warnings + '</b>';
             directionsDisplay.setDirections(response);
-            showSteps(response);
+            if ($("#waypoint").hasClass("selected")) {
+                showSteps(response);
+            } 
         }
     });
 }
@@ -167,6 +168,13 @@ function attachInstructionText(marker, text) {
         stepDisplay.setContent(text);
         stepDisplay.open(map, marker);
     });
+}
+
+function toggleWaypoints() {
+    $("#waypoint").toggleClass("selected");
+    $("#waypoint").toggleClass("greyscale");
+    
+    initialize();
 }
 
 function updateCookie() {

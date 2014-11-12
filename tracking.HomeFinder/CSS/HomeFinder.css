@@ -60,6 +60,23 @@ div#mode {
     text-shadow: 0 0 5px #FFFFFF;
 }
 
+.waypoint {
+    position: absolute;
+    float: right;
+    z-index: 199;
+    right: 200px;
+    top: 1px !important;
+    background: rgb(238, 238, 238);
+    padding: 5px;
+    border: solid 1px #ccc;
+}
+
+.greyscale img {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    filter: grayscale(100%)   
+}
+
 .glyphicon-cog {
     position: absolute;
     float: right;
