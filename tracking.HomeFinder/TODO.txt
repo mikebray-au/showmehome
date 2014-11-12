@@ -1,0 +1,6 @@
+﻿Validate address
+Add a way to display and change the mode, e.g. dont default to driving
+Add a way to display and change the map mode, e.g. simple vs points with directions.
+Add a way to have the applicaiton auto update, or add a refersh button? maybe toggle the auto update functionality?
+Display the distance to go until your home!
+Play with the map styles!

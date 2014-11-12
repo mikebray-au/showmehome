@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Finder</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href="CSS\HomeFinder.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    
+    
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>   
+    <script type="text/javascript" src="JavaScript\jquery.ddslick.min.js"></script>
+    <script type="text/javascript" src="JavaScript\HomeFinderMap.js"></script>
+</head>
+    <body>
+        
+        <div id="user_info">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Home Address</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <input type="text" placeholder="Address" class="form-control" id="address">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="width:100%; height:100%">
+            <div id="setttings">
+                <select id="mode">
+                    <option value="DRIVING" selected="selected" data-imagesrc="https://maps.gstatic.com/mapfiles/ms2/micons/cabs.png">
+                        Driving
+                    </option>
+                    <option value="WALKING" data-imagesrc="https://maps.gstatic.com/mapfiles/ms2/micons/man.png">
+                        Walking
+                    </option>
+                    <option value="BICYCLING" data-imagesrc="https://maps.gstatic.com/mapfiles/ms2/micons/cycling.png">
+                        Bicycling
+                    </option>
+                </select>
+                <span class="glyphicon glyphicon-cog" onclick="toggleSettings()"></span>
+            </div>
+            <div id="map_canvas" style="width:100%; height:100%"></div>
+        </div>
+        <div id="warnings_panel"></div>
+    </body>
+</html>
